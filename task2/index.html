@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="Employee.ls.js"></script>
+    <script type="text/javascript" src='Person.js'></script>
+    <script type="text/javascript" src='Student.js'></script>
+</head>
+<body>
+<script type="text/javascript">
+    var group = [];
+
+    var person1 = new Person('Penko,', 20, 'male');
+    var person2 = new Person('Penka', 20, 'female');
+
+    var student1 = new Student('Genko', 15, 'male', 2);
+    var student2 = new Student('Genka', 15, 'female', 6);
+
+    var employee1 = new Employee('Toshko', 20, 'male', 40);
+    var employee2 = new Employee('Toshka', 17, 'female', 20);
+
+    group.push(person1);
+    group.push(person2);
+    group.push(student1);
+    group.push(student2);
+    group.push(employee1);
+    group.push(employee2);
+
+    for (var i = 0; i < group.length; i++){
+        if(group[i] instanceof Person){
+            console.log(group[i].showPersonInfo());
+        }
+
+        if(group[i] instanceof Student){
+            console.log(group[i].showStudentInfo());
+        }
+
+        if(group[i] instanceof Employee){
+            console.log(group[i].showEmployeeInfo());
+        }
+
+        //console.log(group[i].showEmployeeInfo());
+    }
+
+    for(var i = 0; i < group.length; i++){
+        if(group[i] instanceof Employee){
+            console.log(group[i].calculateOvertime(2));
+        }
+    }
+
+</script>
+</body>
+</html>
